@@ -1,77 +1,77 @@
-.my-icon {
+.board {
     position: relative;
 }
-.my-icon > i {
+.board > i {
     position: absolute;
     display: inline-block;
     width: 0;
     height: 0;
     line-height: 0;
-    border: 1.4999999999999998em solid #454545;
-    border-radius: 1.4999999999999998em;
+    border: 5em solid #454545;
+    border-radius: 5em;
     left: 0em;
     top: 0em;
 }
-.my-icon > i+i {
+.board > i+i {
     position: absolute;
     display: inline-block;
     width: 0;
     height: 0;
     line-height: 0;
-    border: 1.3404255319148934em solid #32d600;
+    border: 4.468085106382979em solid #32d600;
     border-bottom: none;
     border-right: none;
-    border-top-left-radius: 1.3404255319148934em;
-    left: 0.1276595744680851em;
-    top: 0.1276595744680851em;
+    border-top-left-radius: 4.468085106382979em;
+    left: 0.425531914893617em;
+    top: 0.425531914893617em;
 }
-.my-icon > i+i+i {
+.board > i+i+i {
     position: absolute;
     display: inline-block;
     width: 0;
     height: 0;
     line-height: 0;
-    border: 1.3404255319148934em solid #d60000;
+    border: 4.468085106382979em solid #d60000;
     border-bottom: none;
     border-left: none;
-    border-top-right-radius: 1.3404255319148934em;
-    left: 1.5319148936170213em;
-    top: 0.1276595744680851em;
+    border-top-right-radius: 4.468085106382979em;
+    left: 5.1063829787234045em;
+    top: 0.425531914893617em;
 }
-.my-icon > i+i+i+i {
+.board > i+i+i+i {
     position: absolute;
     display: inline-block;
     width: 0;
     height: 0;
     line-height: 0;
-    border: 1.3404255319148934em solid #fbff00;
+    border: 4.468085106382979em solid #fbff00;
     border-top: none;
     border-right: none;
-    border-bottom-left-radius: 1.3404255319148934em;
-    left: 0.1276595744680851em;
-    top: 1.5319148936170213em;
+    border-bottom-left-radius: 4.468085106382979em;
+    left: 0.425531914893617em;
+    top: 5.1063829787234045em;
 }
-.my-icon > i+i+i+i+i {
+.board > i+i+i+i+i {
     position: absolute;
     display: inline-block;
     width: 0;
     height: 0;
     line-height: 0;
-    border: 1.3404255319148934em solid #006dff;
+    border: 4.468085106382979em solid #006dff;
     border-top: none;
     border-left: none;
-    border-bottom-right-radius: 1.3404255319148934em;
-    left: 1.5319148936170213em;
-    top: 1.5319148936170213em;
+    border-bottom-right-radius: 4.468085106382979em;
+    left: 5.1063829787234045em;
+    top: 5.1063829787234045em;
 }
-.my-icon > i+i+i+i+i+i {
+.board > i+i+i+i+i+i {
     position: absolute;
     display: inline-block;
     width: 0;
     height: 0;
     line-height: 0;
-    border: 0.6382978723404255em solid #ffffff;
-    border-radius: 0.6382978723404255em;
-    left: 0.8936170212765957em;
-    top: 0.8936170212765957em;
+    border: 2.127659574468085em solid #ffffff;
+    border-radius: 2.127659574468085em;
+    left: 2.978723404255319em;
+    top: 2.978723404255319em;
 }
