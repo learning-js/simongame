@@ -1,86 +1,86 @@
 .wholeGame {
     position: relative;
     display: inline-block;
-    width: 20em;
-    height: 20em;
+    width: 10em;
+    height: 10em;
 }
 
 .grayBackground {
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 5em solid #454545;
-    border-radius: 5em;
-    left: 0em;
-    top: 0em;
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:5em solid #454545;
+    border-radius:5em;
+    left:0em;
+    top:0em;
 }
 
 .green {
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 4.468085106382979em solid #32d600;
-    border-bottom: none;
-    border-right: none;
-    border-top-left-radius: 4.468085106382979em;
-    left: 0.425531914893617em;
-    top: 0.425531914893617em
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:4.468085106382979em solid #32d600;
+    border-bottom:none;
+    border-right:none;
+    border-top-left-radius:4.468085106382979em;
+    left:0.425531914893617em;
+    top:0.425531914893617em
 }
 
 .red {
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 4.468085106382979em solid #d60000;
-    border-bottom: none;
-    border-left: none;
-    border-top-right-radius: 4.468085106382979em;
-    left: 5.1063829787234045em;
-    top: 0.425531914893617em
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:4.468085106382979em solid #d60000;
+    border-bottom:none;
+    border-left:none;
+    border-top-right-radius:4.468085106382979em;
+    left:5.1063829787234045em;
+    top:0.425531914893617em
 }
 
 .yellow {
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 4.468085106382979em solid #fbff00;
-    border-top: none;
-    border-right: none;
-    border-bottom-left-radius: 4.468085106382979em;
-    left: 0.425531914893617em;
-    top: 5.1063829787234045em
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:4.468085106382979em solid #fbff00;
+    border-top:none;
+    border-right:none;
+    border-bottom-left-radius:4.468085106382979em;
+    left:0.425531914893617em;
+    top:5.1063829787234045em
 }
 
 .blue {
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 4.468085106382979em solid #006dff;
-    border-top: none;
-    border-left: none;
-    border-bottom-right-radius: 4.468085106382979em;
-    left: 5.1063829787234045em;
-    top: 5.1063829787234045em
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:4.468085106382979em solid #006dff;
+    border-top:none;
+    border-left:none;
+    border-bottom-right-radius:4.468085106382979em;
+    left:5.1063829787234045em;
+    top:5.1063829787234045em
 }
 
 .whiteInside {
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 2.127659574468085em solid #ffffff;
-    border-radius: 2.127659574468085em;
-    left: 2.978723404255319em;
-    top: 2.978723404255319em
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:2.127659574468085em solid #ffffff;
+    border-radius:2.127659574468085em;
+    left:2.978723404255319em;
+    top:2.978723404255319em
 }
