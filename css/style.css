@@ -9,11 +9,17 @@ body {
 
 p {
     font-family: 'Alfa Slab One', serif;
-    font-size: 4em;
+    font-size: 3.5em;
+    margin-left: -2.1em;
+    margin-top: -1.5em;
 }
 
 p i {
-    font-size: 0.5em !important;
+    font-size: 0.3em !important;
+    position: absolute;
+    display: inline-block;
+    margin-left: 9em;
+    margin-top: -1em;
 }
 
 .container {
