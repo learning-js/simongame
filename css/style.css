@@ -4,6 +4,16 @@
 
 body {
     background-color: red;
+    font-family: 'Lato', sans-serif;
+}
+
+p {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 4em;
+}
+
+p i {
+    font-size: 0.5em !important;
 }
 
 .container {
