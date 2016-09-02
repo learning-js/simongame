@@ -11,8 +11,8 @@
     width:0;
     height:0;
     line-height:0;
-    border:20.8em solid #454545;
-    border-radius:20.8em;
+    border:21.2em solid #454545;
+    border-radius:21.2em;
     left:0em;
     top:0em;
 }
@@ -27,8 +27,8 @@
     border-bottom:none;
     border-right:none;
     border-top-left-radius:20em;
-    left:0.40em;
-    top:0.40em
+    left:0.80em;
+    top:0.80em
 }
 
 .red {
@@ -41,8 +41,8 @@
     border-bottom:none;
     border-left:none;
     border-top-right-radius:20em;
-    left:5.1063829787234045em;
-    top:0.425531914893617em
+    left:21.40em;
+    top:0.80em
 }
 
 .yellow {
@@ -55,8 +55,8 @@
     border-top:none;
     border-right:none;
     border-bottom-left-radius:20em;
-    left:0.425531914893617em;
-    top:5.1063829787234045em
+    left:0.80em;
+    top:21.40em
 }
 
 .blue {
@@ -69,8 +69,20 @@
     border-top:none;
     border-left:none;
     border-bottom-right-radius:20em;
-    left:20em;
-    top:20em
+    left:21.40em;
+    top:21.40em
+}
+
+.grayBorder {
+    position: absolute;
+    display:inline-block;
+    width:0;
+    height:0;
+    line-height:0;
+    border:11em solid #454545;
+    border-radius:11em;
+    left:10.4em;
+    top:10.4em
 }
 
 .whiteInside {
@@ -79,8 +91,9 @@
     width:0;
     height:0;
     line-height:0;
-    border:2.127659574468085em solid #ffffff;
-    border-radius:2.127659574468085em;
-    left:2.978723404255319em;
-    top:2.978723404255319em
+    border:10em solid #ffffff;
+    border-radius:10em;
+    left:11.4em;
+    top:11.4em
 }
+
