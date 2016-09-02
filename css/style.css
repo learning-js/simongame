@@ -11,8 +11,8 @@
     width:0;
     height:0;
     line-height:0;
-    border:20em solid #454545;
-    border-radius:20em;
+    border:20.8em solid #454545;
+    border-radius:20.8em;
     left:0em;
     top:0em;
 }
@@ -23,10 +23,10 @@
     width:0;
     height:0;
     line-height:0;
-    border:19.2em solid #32d600;
+    border:20em solid #32d600;
     border-bottom:none;
     border-right:none;
-    border-top-left-radius:19.2em;
+    border-top-left-radius:20em;
     left:0.40em;
     top:0.40em
 }
@@ -37,10 +37,10 @@
     width:0;
     height:0;
     line-height:0;
-    border:19.2em solid #d60000;
+    border:20em solid #d60000;
     border-bottom:none;
     border-left:none;
-    border-top-right-radius:19.2em;
+    border-top-right-radius:20em;
     left:5.1063829787234045em;
     top:0.425531914893617em
 }
@@ -51,10 +51,10 @@
     width:0;
     height:0;
     line-height:0;
-    border:19.2em solid #fbff00;
+    border:20em solid #fbff00;
     border-top:none;
     border-right:none;
-    border-bottom-left-radius:19.2em;
+    border-bottom-left-radius:20em;
     left:0.425531914893617em;
     top:5.1063829787234045em
 }
@@ -65,10 +65,10 @@
     width:0;
     height:0;
     line-height:0;
-    border:19.2em solid #006dff;
+    border:20em solid #006dff;
     border-top:none;
     border-left:none;
-    border-bottom-right-radius:19.2em;
+    border-bottom-right-radius:20em;
     left:20em;
     top:20em
 }
