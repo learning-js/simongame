@@ -1,10 +1,11 @@
-* {
+/** {
     border: solid 1px black;
-}
+}*/
 
 body {
-    background-color: red;
+    background-color: #79a8a9;
     font-family: 'Lato', sans-serif;
+    color: #1f4e5f;
 }
 
 p {
@@ -39,7 +40,7 @@ p i {
     width:0;
     height:0;
     line-height:0;
-    border:21.2em solid #454545;
+    border:21.2em solid #1f4e5f;
     border-radius:21.2em;
     left:0em;
     top:0em;
@@ -51,7 +52,7 @@ p i {
     width:0;
     height:0;
     line-height:0;
-    border:20em solid #32d600;
+    border:20em solid #a5d296;
     border-bottom:none;
     border-right:none;
     border-top-left-radius:20em;
@@ -65,11 +66,11 @@ p i {
     width:0;
     height:0;
     line-height:0;
-    border:20em solid #d60000;
+    border:20em solid #ff7473;
     border-bottom:none;
     border-left:none;
     border-top-right-radius:20em;
-    left:21.40em;
+    left:21.60em;
     top:0.80em
 }
 
@@ -79,12 +80,12 @@ p i {
     width:0;
     height:0;
     line-height:0;
-    border:20em solid #fbff00;
+    border:20em solid #ffc952;
     border-top:none;
     border-right:none;
     border-bottom-left-radius:20em;
     left:0.80em;
-    top:21.40em
+    top:21.50em
 }
 
 .blue {
@@ -93,12 +94,12 @@ p i {
     width:0;
     height:0;
     line-height:0;
-    border:20em solid #006dff;
+    border:20em solid #47b8e0;
     border-top:none;
     border-left:none;
     border-bottom-right-radius:20em;
-    left:21.40em;
-    top:21.40em
+    left:21.60em;
+    top:21.50em
 }
 
 .grayBorder {
@@ -107,7 +108,7 @@ p i {
     width:0;
     height:0;
     line-height:0;
-    border:11em solid #454545;
+    border:11em solid #1f4e5f;
     border-radius:11em;
     left:10.4em;
     top:10.4em
