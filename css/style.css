@@ -126,3 +126,23 @@ p i {
     top:11.4em
 }
 
+.counter {
+    border: 2px solid black;
+    position: absolute;
+    display:inline-block;
+    background-color: #1f4e5f;
+    width: 5em;
+    height: 2.5em;
+    border-radius: 0.6em;
+    margin-left: -7em;
+    margin-top: 20em;
+}
+.counter p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    position: relative;
+    display: inline-block;
+    color: #f9320c;
+    margin-left: 0em;
+    margin-top: 0.25em;
+}
