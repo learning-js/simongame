@@ -164,11 +164,13 @@ p i {
 .start {
     margin-left: 0.5em;
     background-color: #ff7473;
+    cursor: pointer;
 }
 
 .strict {
     margin-left: 5em;
     background-color: #ffc952;
+    cursor: pointer;
 }
 
 .labelCount {
@@ -206,6 +208,7 @@ p i {
 .square {
     position: absolute;
     z-index: 5;
+    cursor: pointer;
     display: inline-block;
     background-color: #47b8e0;
     margin-top: 26.65em;
