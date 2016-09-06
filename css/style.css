@@ -61,7 +61,8 @@ p i {
     border-right:none;
     border-top-left-radius:20em;
     left:0.80em;
-    top:0.80em
+    top:0.80em;
+    cursor: pointer;
 }
 
 .red {
@@ -75,7 +76,8 @@ p i {
     border-left:none;
     border-top-right-radius:20em;
     left:21.60em;
-    top:0.80em
+    top:0.80em;
+    cursor: pointer;
 }
 
 .yellow {
@@ -89,7 +91,8 @@ p i {
     border-right:none;
     border-bottom-left-radius:20em;
     left:0.80em;
-    top:21.50em
+    top:21.50em;
+    cursor: pointer;
 }
 
 .blue {
@@ -103,7 +106,8 @@ p i {
     border-left:none;
     border-bottom-right-radius:20em;
     left:21.60em;
-    top:21.50em
+    top:21.50em;
+    cursor: pointer;
 }
 
 .grayBorder {

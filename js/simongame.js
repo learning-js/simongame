@@ -2,8 +2,10 @@ $(document).ready(function() {
 
 var isTheGameOn = false;
 var playerTurn = false;
+var strictMode = false;
 var randomSequence = [];
 var timesPlayer = 0;
+var round = 0;
 
 
 /////////// TURN ON AND OFF THE GAME ///////////
@@ -19,7 +21,21 @@ $(".square").click(function() {
         playerTurn = false;
         randomSequence = [];
         timesPlayer = 0;
-        $(".square, .counter p").removeAttr("style");
+        strictMode = false;
+        $(".square, .counter p, .strict").removeAttr("style");
+    }
+});
+
+/////////// TURN ON AND OFF THE STRICT MODE ///////////
+
+$(".strict").click(function() {
+    if(isTheGameOn) {
+        if(!strictMode) {
+            strictMode = true;
+            $(".strict").css({
+                "background-color" : "#"
+            });
+        }
     }
 });
 
