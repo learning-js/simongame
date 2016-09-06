@@ -2,13 +2,12 @@ $(document).ready(function() {
 
 var isTheGameOn = false;
 var playerTurn = false;
-//esta variable podría ir dentro de la función random
-var choices = ["green", "red", "yellow", "blue"];
 var randomSequence = [];
 var timesPlayer = 0;
 
 
-/////////// TURN ON AND OFF THE GAME
+/////////// TURN ON AND OFF THE GAME ///////////
+
 $(".square").click(function() {
     if(!isTheGameOn) {
         isTheGameOn = true;
@@ -23,5 +22,19 @@ $(".square").click(function() {
         $(".square, .counter p").removeAttr("style");
     }
 });
+
+/////////// FUNCTION THAT CHOOSES A COLOR ///////////
+
+function newSequenceElement() {
+    var choices = ["green", "red", "yellow", "blue"];
+    var randomColor = choices[Math.floor(Math.random() * choices.length)];
+    randomSequence.push(randomColor);
+};
+
+/////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
+
+function highlightButton() {
+
+};
 
 })
