@@ -148,12 +148,10 @@ p i {
     margin-top: 0.25em;
 }
 
-.start {
+.secondRow {
     position: absolute;
     display: inline-block;
-    margin-left: 0.5em;
     margin-top: 20.5em;
-    background-color: #ff7473;
     width: 1.5em;
     height: 1.5em;
     border-radius: 1.5em;
@@ -161,10 +159,24 @@ p i {
     box-shadow: 0px 2px 5px #432e27;
 }
 
+.start {
+    margin-left: 0.5em;
+    background-color: #ff7473;
+}
+
+.strict {
+    margin-left: 5em;
+    background-color: #ffc952;
+}
+
 .label {
     margin-top: -1.5em;
 }
 .labelStart {
+    margin-top: 1.9em;
+    margin-left: -0.7em;
+}
+.labelStrict {
     margin-top: 1.9em;
     margin-left: -0.7em;
 }
