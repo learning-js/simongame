@@ -169,7 +169,7 @@ p i {
     background-color: #ffc952;
 }
 
-.label {
+.labelCount {
     margin-top: -1.5em;
 }
 .labelStart {
@@ -178,5 +178,36 @@ p i {
 }
 .labelStrict {
     margin-top: 1.9em;
-    margin-left: -0.7em;
+    margin-left: -0.9em;
+}
+
+.onOffChoice {
+    position: absolute;
+    display: inline-block;
+    background-color: #1f4e5f;
+    margin-top: 26.5em;
+    margin-left: -1.5em;
+    width: 3em;
+    height: 1.5em;
+    border: 2px solid black;
+}
+
+.offChoice {
+    margin-top: 0em;
+    margin-left: -5.3em;
+}
+
+.onChoice {
+    margin-top: -2.2em;
+    margin-left: 3em;
+}
+.square {
+    position: absolute;
+    z-index: 5;
+    display: inline-block;
+    background-color: #47b8e0;
+    margin-top: 26.65em;
+    margin-left: -1.4em;
+    width: 1.5em;
+    height: 1.5em;
 }
