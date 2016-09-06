@@ -137,6 +137,7 @@ p i {
     margin-left: -7em;
     margin-top: 20em;
 }
+
 .counter p {
     font-family: 'Orbitron', sans-serif;
     font-size: 2em;
@@ -145,4 +146,25 @@ p i {
     color: #f9320c;
     margin-left: 0em;
     margin-top: 0.25em;
+}
+
+.start {
+    position: absolute;
+    display: inline-block;
+    margin-left: 0.5em;
+    margin-top: 20.5em;
+    background-color: #ff7473;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1.5em;
+    border: 2px solid #1f4e5f;
+    box-shadow: 0px 2px 5px #432e27;
+}
+
+.label {
+    margin-top: -1.5em;
+}
+.labelStart {
+    margin-top: 1.9em;
+    margin-left: -0.7em;
 }
