@@ -1,6 +1,8 @@
 /** {
     border: solid 1px black;
-}*/
+}
+counter red color : #f9320c;
+*/
 
 body {
     background-color: #79a8a9;
@@ -143,7 +145,7 @@ p i {
     font-size: 2em;
     position: relative;
     display: inline-block;
-    color: #f9320c;
+    color: #255c70;
     margin-left: 0em;
     margin-top: 0.25em;
 }
