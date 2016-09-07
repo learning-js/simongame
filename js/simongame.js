@@ -50,7 +50,7 @@ $(".strict").click(function() {
 $(".start").click(function() {
     if(isTheGameOn && randomSequence.length == 0) {
         blinkingLines();
-        gameWorking();
+        setTimeout(gameWorking(), 2000);
     }
 })
 
@@ -60,17 +60,18 @@ function gameWorking() {
     newSequenceElement();
     round++;
     /// Para actualizar el marcador
-    /*if(round < 10) {
+    if(round < 10) {
         $("#counterLines").html("0" + round);
     }
-    else {
+    if(round >= 10) {
         $("#counterLines").html(round);
-    }*/
+    }
 }
 
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
 function blinkingLines() {
     $("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    gameWorking()
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
