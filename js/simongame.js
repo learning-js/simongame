@@ -37,6 +37,7 @@ $(".strict").click(function() {
                 "box-shadow" : "0px 2px 5px #ffea00",
                 "border" : "2px solid #ffd800"
             });
+            blinkingLines();
         }
         else {
             strictMode = false;
@@ -44,6 +45,15 @@ $(".strict").click(function() {
         }
     }
 });
+
+/////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
+function blinkingLines() {
+    $("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    /*var lines = document.getElementById("counterLines");
+    setInterval(function() {
+        lines.style.visibility = (lines.style.visibility == "hidden" ? "" : 'hidden');
+    }, 500);*/
+}
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
 
