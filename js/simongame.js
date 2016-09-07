@@ -33,8 +33,14 @@ $(".strict").click(function() {
         if(!strictMode) {
             strictMode = true;
             $(".strict").css({
-                "background-color" : "#"
+                "background-color" : "#ffea00",
+                "box-shadow" : "0px 2px 5px #ffea00",
+                "border" : "2px solid #ffd800"
             });
+        }
+        else {
+            strictMode = false;
+            $(".strict").removeAttr("style");
         }
     }
 });
