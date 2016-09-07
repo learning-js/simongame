@@ -37,7 +37,6 @@ $(".strict").click(function() {
                 "box-shadow" : "0px 2px 5px #ffea00",
                 "border" : "2px solid #ffd800"
             });
-            blinkingLines();
         }
         else {
             strictMode = false;
@@ -46,13 +45,32 @@ $(".strict").click(function() {
     }
 });
 
+/////////// PUSH START BUTTON ///////////
+
+$(".start").click(function() {
+    if(isTheGameOn && randomSequence.length == 0) {
+        blinkingLines();
+        gameWorking();
+    }
+})
+
+/////////// GAME WORKING ///////////
+
+function gameWorking() {
+    newSequenceElement();
+    round++;
+    /// Para actualizar el marcador
+    /*if(round < 10) {
+        $("#counterLines").html("0" + round);
+    }
+    else {
+        $("#counterLines").html(round);
+    }*/
+}
+
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
 function blinkingLines() {
     $("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-    /*var lines = document.getElementById("counterLines");
-    setInterval(function() {
-        lines.style.visibility = (lines.style.visibility == "hidden" ? "" : 'hidden');
-    }, 500);*/
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
@@ -61,12 +79,15 @@ function newSequenceElement() {
     var choices = ["green", "red", "yellow", "blue"];
     var randomColor = choices[Math.floor(Math.random() * choices.length)];
     randomSequence.push(randomColor);
+    console.log(randomSequence);
 };
 
 /////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
 
 function highlightButton() {
+    for (var i = 0; i < randomSequence.length; i++) {
 
+    };
 };
 
 })
