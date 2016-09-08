@@ -53,6 +53,7 @@ $(".start").click(function() {
 
 function gameWorking() {
     newSequenceElement();
+    highlightButton();
     round++;
     /// Para actualizar el marcador
     if(round < 10) {
@@ -88,12 +89,12 @@ function blinkingLines() {
             if(times == 2) {
                 clearInterval(blinkingIn);
             };
-       }, 500);
-    }, 900);
+       }, 250);
+    }, 500);
 
     setTimeout(function() {
         gameWorking();
-    }, 3000);
+    }, 2000);
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
@@ -102,14 +103,47 @@ function newSequenceElement() {
     var choices = ["green", "red", "yellow", "blue"];
     var randomColor = choices[Math.floor(Math.random() * choices.length)];
     randomSequence.push(randomColor);
-    console.log(randomSequence);
 };
 
 /////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
 
 function highlightButton() {
     for (var i = 0; i < randomSequence.length; i++) {
-
+        console.log("entro a iluminar el botón que es el " + randomSequence[i]);
+        switch(randomSequence[i]) {
+            case "blue" :
+                $(".blue").css({
+                    "border" : "20em solid #39eaff",
+                    "border-top" : "none",
+                    "border-left" : "none",
+                    "border-bottom-right-radius" : "20em"
+                    });
+                break;
+            case "yellow" :
+                $(".yellow").css({
+                    "border" : "20em solid #fffd3a",
+                    "border-top" : "none",
+                    "border-right" : "none",
+                    "border-bottom-left-radius" : "20em"
+                    });
+                break;
+            case "red" :
+                $(".red").css({
+                    "border" : "20em solid #ff4403",
+                    "border-bottom" : "none",
+                    "border-left" : "none",
+                    "border-top-right-radius" : "20em"
+                    });
+                break;
+            case "green" :
+                $(".green").css({
+                    "border": "20em solid #aeff92",
+                    "border-bottom" : "none",
+                    "border-right" : "none",
+                    "border-top-left-radius" : "20em"
+                    });
+                break;
+        }
     };
 };
 
