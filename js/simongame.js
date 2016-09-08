@@ -17,14 +17,7 @@ $(".square").click(function() {
         $(".counter p").css("color", "#f9320c");
     }
     else {
-        isTheGameOn = false;
-        playerTurn = false;
-        randomSequence = [];
-        timesPlayer = 0;
-        strictMode = false;
-        round = 0;
-        $("#counterLines").html("--");
-        $(".square, .counter p, .strict, #counterLines").removeAttr("style");
+        resetGame();
     }
 });
 
@@ -68,6 +61,19 @@ function gameWorking() {
     if(round >= 10) {
         $("#counterLines").html(round);
     }
+}
+
+/////////// FUNCTION THAT RESETS THE GAME ///////////
+
+function resetGame() {
+    isTheGameOn = false;
+    playerTurn = false;
+    randomSequence = [];
+    timesPlayer = 0;
+    strictMode = false;
+    round = 0;
+    $("#counterLines").html("--");
+    $(".square, .counter p, .strict, #counterLines").removeAttr("style");
 }
 
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
