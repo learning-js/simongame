@@ -22,7 +22,9 @@ $(".square").click(function() {
         randomSequence = [];
         timesPlayer = 0;
         strictMode = false;
-        $(".square, .counter p, .strict").removeAttr("style");
+        round = 0;
+        $("#counterLines").html("--");
+        $(".square, .counter p, .strict, #counterLines").removeAttr("style");
     }
 });
 
@@ -50,7 +52,7 @@ $(".strict").click(function() {
 $(".start").click(function() {
     if(isTheGameOn && randomSequence.length == 0) {
         blinkingLines();
-        setTimeout(gameWorking(), 2000);
+        setTimeout(gameWorking(), 10000);
     }
 })
 
@@ -71,7 +73,6 @@ function gameWorking() {
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
 function blinkingLines() {
     $("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-    gameWorking()
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
