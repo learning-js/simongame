@@ -45,7 +45,7 @@ $(".strict").click(function() {
 $(".start").click(function() {
     if(isTheGameOn && randomSequence.length == 0) {
         blinkingLines();
-        setTimeout(gameWorking(), 10000);
+        /*setTimeout(gameWorking(), 10000);*/
     }
 })
 
@@ -78,7 +78,18 @@ function resetGame() {
 
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
 function blinkingLines() {
-    $("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    /*$("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);*/
+    var times = 0;
+    var blinking = setInterval(function() {
+        $(".counter p").css("color", "#255c70");
+        var blinkingBack = setTimeout(function() {
+           $(".counter p").css("color", "#f9320c");
+           times++;
+            if(times == 2) {
+                clearInterval(blinking);
+            };
+       }, 500);
+    }, 1000);
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
