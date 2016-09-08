@@ -80,16 +80,20 @@ function resetGame() {
 function blinkingLines() {
     /*$("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);*/
     var times = 0;
-    var blinking = setInterval(function() {
+    var blinkingIn = setInterval(function() {
         $(".counter p").css("color", "#255c70");
-        var blinkingBack = setTimeout(function() {
+        var blinkingOut = setTimeout(function() {
            $(".counter p").css("color", "#f9320c");
            times++;
             if(times == 2) {
-                clearInterval(blinking);
+                clearInterval(blinkingIn);
             };
        }, 500);
-    }, 1000);
+    }, 900);
+
+    setTimeout(function() {
+        gameWorking();
+    }, 3000);
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
