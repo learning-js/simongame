@@ -130,6 +130,9 @@ function highlightButton() {
                     });
                 break;
         }
+        setTimeout(function() {
+            $(".green, .red, .blue, .yellow").removeAttr("style");
+        }, 500);
     };
 };
 
