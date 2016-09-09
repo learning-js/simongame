@@ -45,37 +45,8 @@ $(".strict").click(function() {
 $(".start").click(function() {
     if(isTheGameOn && randomSequence.length == 0) {
         blinkingLines();
-        /*setTimeout(gameWorking(), 10000);*/
     }
 })
-
-/////////// GAME WORKING ///////////
-
-function gameWorking() {
-    newSequenceElement();
-    highlightButton();
-    round++;
-    /// Para actualizar el marcador
-    if(round < 10) {
-        $("#counterLines").html("0" + round);
-    }
-    if(round >= 10) {
-        $("#counterLines").html(round);
-    }
-}
-
-/////////// FUNCTION THAT RESETS THE GAME ///////////
-
-function resetGame() {
-    isTheGameOn = false;
-    playerTurn = false;
-    randomSequence = [];
-    timesPlayer = 0;
-    strictMode = false;
-    round = 0;
-    $("#counterLines").html("--");
-    $(".square, .counter p, .strict, #counterLines").removeAttr("style");
-}
 
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
 function blinkingLines() {
@@ -95,6 +66,21 @@ function blinkingLines() {
     setTimeout(function() {
         gameWorking();
     }, 2000);
+}
+
+/////////// GAME WORKING ///////////
+
+function gameWorking() {
+    newSequenceElement();
+    highlightButton();
+    round++;
+    /// Para actualizar el marcador
+    if(round < 10) {
+        $("#counterLines").html("0" + round);
+    }
+    if(round >= 10) {
+        $("#counterLines").html(round);
+    }
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
@@ -148,3 +134,16 @@ function highlightButton() {
 };
 
 })
+
+/////////// FUNCTION THAT RESETS THE GAME ///////////
+
+function resetGame() {
+    isTheGameOn = false;
+    playerTurn = false;
+    randomSequence = [];
+    timesPlayer = 0;
+    strictMode = false;
+    round = 0;
+    $("#counterLines").html("--");
+    $(".square, .counter p, .strict, #counterLines").removeAttr("style");
+}
