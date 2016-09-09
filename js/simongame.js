@@ -48,6 +48,21 @@ $(".start").click(function() {
     }
 })
 
+/////////// FUNCTION FOR PLAYER TURN ///////////
+
+$(".colorButtons").click(function() {
+    console.log("el jugador ha pulsado un botón");
+    if(playerTurn) {
+        timesPlayer++;
+        if(this.id !== randomSequence[timesPlayer-1]) {
+            if(strictMode) {
+                resetGame();
+                $("#counterLines").html("!!");
+            }
+        }
+    }
+});
+
 /////////// FUNCTION THAT BLINKS COUNTER LINES ///////////
 function blinkingLines() {
     /*$("#counterLines").delay(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);*/
@@ -74,13 +89,15 @@ function gameWorking() {
     newSequenceElement();
     highlightButton();
     round++;
-    /// Para actualizar el marcador
-    if(round < 10) {
-        $("#counterLines").html("0" + round);
-    }
-    if(round >= 10) {
-        $("#counterLines").html(round);
-    }
+    setTimeout(function() {
+        if(round < 10) {
+            $("#counterLines").html("0" + round);
+        }
+        if(round >= 10) {
+            $("#counterLines").html(round);
+        }
+        playerTurn = true;
+    }, 1000);
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
@@ -98,7 +115,7 @@ function highlightButton() {
         console.log("entro a iluminar el botón que es el " + randomSequence[i]);
         switch(randomSequence[i]) {
             case "blue" :
-                $(".blue").css({
+                $("#blue").css({
                     "border" : "20em solid #39eaff",
                     "border-top" : "none",
                     "border-left" : "none",
@@ -106,7 +123,7 @@ function highlightButton() {
                     });
                 break;
             case "yellow" :
-                $(".yellow").css({
+                $("#yellow").css({
                     "border" : "20em solid #fffd3a",
                     "border-top" : "none",
                     "border-right" : "none",
@@ -114,7 +131,7 @@ function highlightButton() {
                     });
                 break;
             case "red" :
-                $(".red").css({
+                $("#red").css({
                     "border" : "20em solid #ff4403",
                     "border-bottom" : "none",
                     "border-left" : "none",
@@ -122,7 +139,7 @@ function highlightButton() {
                     });
                 break;
             case "green" :
-                $(".green").css({
+                $("#green").css({
                     "border": "20em solid #aeff92",
                     "border-bottom" : "none",
                     "border-right" : "none",
@@ -131,7 +148,7 @@ function highlightButton() {
                 break;
         }
         setTimeout(function() {
-            $(".green, .red, .blue, .yellow").removeAttr("style");
+            $("#green, #red, #blue, #yellow").removeAttr("style");
         }, 500);
     };
 };

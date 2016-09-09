@@ -50,7 +50,7 @@ p i {
     top:0em;
 }
 
-.green {
+#green {
     position: absolute;
     display:inline-block;
     width:0;
@@ -65,7 +65,7 @@ p i {
     cursor: pointer;
 }
 
-.red {
+#red {
     position: absolute;
     display:inline-block;
     width:0;
@@ -80,7 +80,7 @@ p i {
     cursor: pointer;
 }
 
-.yellow {
+#yellow {
     position: absolute;
     display:inline-block;
     width:0;
@@ -95,7 +95,7 @@ p i {
     cursor: pointer;
 }
 
-.blue {
+#blue {
     position: absolute;
     display:inline-block;
     width:0;
