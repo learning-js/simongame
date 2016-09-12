@@ -6,7 +6,12 @@ var strictMode = false;
 var randomSequence = [];
 var timesPlayer = 0;
 var round = 0;
-
+var highlightColors = {
+    "blue" : "#39eaff",
+    "yellow" : "#fffd3a",
+    "red" : "#ff4403",
+    "green" : "#aeff92"
+}
 
 /////////// TURN ON AND OFF THE GAME ///////////
 
@@ -53,12 +58,19 @@ $(".start").click(function() {
 $(".colorButtons").click(function() {
     console.log("el jugador ha pulsado un botón");
     if(playerTurn) {
+        console.log("entro en if porque playerTurn es " + playerTurn);
         timesPlayer++;
         if(this.id !== randomSequence[timesPlayer-1]) {
+            console.log(this.id);
             if(strictMode) {
                 resetGame();
                 $("#counterLines").html("!!");
             }
+        }
+        else {
+            console.log("es igual");
+            playerTurn = false;
+            gameWorking();
         }
     }
 });
@@ -113,7 +125,18 @@ function newSequenceElement() {
 function highlightButton() {
     for (var i = 0; i < randomSequence.length; i++) {
         console.log("entro a iluminar el botón que es el " + randomSequence[i]);
-        switch(randomSequence[i]) {
+        setTimeout(function() {
+            console.log(randomSequence);
+            console.log(i);
+            console.log("ilumino " + randomSequence[i]);
+            $("#" + randomSequence[i]).css({
+                "border" : "20em solid" + highlightColors[randomSequence[i]],
+                "border-top" : "none",
+                "border-left" : "none",
+                "border-bottom-right-radius" : "20em"
+            });
+        }, 500);
+        /*switch(randomSequence[i]) {
             case "blue" :
                 $("#blue").css({
                     "border" : "20em solid #39eaff",
@@ -146,10 +169,10 @@ function highlightButton() {
                     "border-top-left-radius" : "20em"
                     });
                 break;
-        }
+        }*/
         setTimeout(function() {
             $("#green, #red, #blue, #yellow").removeAttr("style");
-        }, 500);
+        }, 1000);
     };
 };
 
