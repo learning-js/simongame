@@ -123,8 +123,40 @@ function newSequenceElement() {
 /////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
 
 function highlightButton() {
-    for (var i = 0; i < randomSequence.length; i++) {
+    function doSetTimeout(i) {
+      setTimeout(function() {
+            console.log(randomSequence);
+            console.log(i);
+            console.log("ilumino " + randomSequence[i]);
+            if(randomSequence[i] == "blue" || randomSequence[i] == "red") {
+                $("#" + randomSequence[i]).css({
+                    "border" : "20em solid" + highlightColors[randomSequence[i]],
+                    "border-top" : "none",
+                    "border-left" : "none",
+                    "border-bottom-right-radius" : "20em"
+                });
+            }
+            if(randomSequence[i] == "green" || randomSequence[i] == "yellow") {
+                $("#" + randomSequence[i]).css({
+                    "border" : "20em solid" + highlightColors[randomSequence[i]],
+                    "border-top" : "none",
+                    "border-left" : "none",
+                    "border-bottom-left-radius" : "20em"
+                });
+            }
+        }, 500);
+        setTimeout(function() {
+            $("#green, #red, #blue, #yellow").removeAttr("style");
+        }, 1000);
+    }
+
+    for (var i = 0; i < randomSequence.length; ++i) {
+      doSetTimeout(i);
+    }
+   /* for (var i = 0; i < randomSequence.length; i++) {
         console.log("entro a iluminar el botón que es el " + randomSequence[i]);
+        console.log(i);
+
         setTimeout(function() {
             console.log(randomSequence);
             console.log(i);
@@ -135,7 +167,7 @@ function highlightButton() {
                 "border-left" : "none",
                 "border-bottom-right-radius" : "20em"
             });
-        }, 500);
+        }, 500);*/
         /*switch(randomSequence[i]) {
             case "blue" :
                 $("#blue").css({
@@ -169,11 +201,11 @@ function highlightButton() {
                     "border-top-left-radius" : "20em"
                     });
                 break;
-        }*/
+        }
         setTimeout(function() {
             $("#green, #red, #blue, #yellow").removeAttr("style");
         }, 1000);
-    };
+    };*/
 };
 
 })
