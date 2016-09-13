@@ -128,29 +128,47 @@ function highlightButton() {
             console.log(randomSequence);
             console.log(i);
             console.log("ilumino " + randomSequence[i]);
-            if(randomSequence[i] == "blue" || randomSequence[i] == "red") {
-                $("#" + randomSequence[i]).css({
-                    "border" : "20em solid" + highlightColors[randomSequence[i]],
+            switch(randomSequence[i]) {
+            case "blue" :
+                $("#blue").css({
+                    "border" : "20em solid #39eaff",
                     "border-top" : "none",
                     "border-left" : "none",
                     "border-bottom-right-radius" : "20em"
-                });
-            }
-            if(randomSequence[i] == "green" || randomSequence[i] == "yellow") {
-                $("#" + randomSequence[i]).css({
-                    "border" : "20em solid" + highlightColors[randomSequence[i]],
+                    });
+                break;
+            case "yellow" :
+                $("#yellow").css({
+                    "border" : "20em solid #fffd3a",
                     "border-top" : "none",
-                    "border-left" : "none",
+                    "border-right" : "none",
                     "border-bottom-left-radius" : "20em"
-                });
-            }
-        }, 500);
+                    });
+                break;
+            case "red" :
+                $("#red").css({
+                    "border" : "20em solid #ff4403",
+                    "border-bottom" : "none",
+                    "border-left" : "none",
+                    "border-top-right-radius" : "20em"
+                    });
+                break;
+            case "green" :
+                $("#green").css({
+                    "border": "20em solid #aeff92",
+                    "border-bottom" : "none",
+                    "border-right" : "none",
+                    "border-top-left-radius" : "20em"
+                    });
+                break;
+        }
+        }, i * 500);
         setTimeout(function() {
             $("#green, #red, #blue, #yellow").removeAttr("style");
         }, 1000);
     }
 
-    for (var i = 0; i < randomSequence.length; ++i) {
+    for (var i = 0; i < randomSequence.length; i++) {
       doSetTimeout(i);
     }
    /* for (var i = 0; i < randomSequence.length; i++) {
