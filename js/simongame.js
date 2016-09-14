@@ -16,7 +16,6 @@ $(".square").click(function() {
         $(".counter p").css("color", "#f9320c");
     }
     else {
-        isTheGameOn = false;
         resetGame();
     }
 });
@@ -43,7 +42,10 @@ $(".strict").click(function() {
 /////////// PUSH START BUTTON ///////////
 
 $(".start").click(function() {
+    console.log(randomSequence);
+    console.log(isTheGameOn);
     if(isTheGameOn && randomSequence.length == 0) {
+        console.log("se ha pulsado start");
         blinkingLines();
     }
 })
@@ -221,8 +223,6 @@ function highlightButton() {
     };*/
 };
 
-})
-
 /////////// FUNCTION THAT RESETS THE GAME ///////////
 
 function resetGame() {
@@ -235,3 +235,5 @@ function resetGame() {
     $("#counterLines").html("--");
     $(".square, .counter p, .strict, #counterLines").removeAttr("style");
 }
+
+});
