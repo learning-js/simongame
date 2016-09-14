@@ -6,12 +6,6 @@ var strictMode = false;
 var randomSequence = [];
 var timesPlayer = 0;
 var round = 0;
-var highlightColors = {
-    "blue" : "#39eaff",
-    "yellow" : "#fffd3a",
-    "red" : "#ff4403",
-    "green" : "#aeff92"
-}
 
 /////////// TURN ON AND OFF THE GAME ///////////
 
@@ -22,6 +16,7 @@ $(".square").click(function() {
         $(".counter p").css("color", "#f9320c");
     }
     else {
+        isTheGameOn = false;
         resetGame();
     }
 });
