@@ -62,12 +62,16 @@ $(".colorButtons").click(function() {
             if(strictMode) {
                 resetGame();
                 $("#counterLines").html("!!");
+                blinkingLines();
             }
         }
         else {
-            console.log("es igual");
-            playerTurn = false;
-            gameWorking();
+            if(timesPlayer >= randomSequence.length) {
+                console.log("es igual");
+                playerTurn = false;
+                timesPlayer = 0;
+                gameWorking();
+            }
         }
     }
 });
@@ -120,107 +124,57 @@ function newSequenceElement() {
 /////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
 
 function highlightButton() {
-    function doSetTimeout(i) {
-      setTimeout(function() {
-            console.log(randomSequence);
-            console.log(i);
-            console.log("ilumino " + randomSequence[i]);
-            switch(randomSequence[i]) {
-            case "blue" :
-                $("#blue").css({
-                    "border" : "20em solid #39eaff",
-                    "border-top" : "none",
-                    "border-left" : "none",
-                    "border-bottom-right-radius" : "20em"
-                    });
-                break;
-            case "yellow" :
-                $("#yellow").css({
-                    "border" : "20em solid #fffd3a",
-                    "border-top" : "none",
-                    "border-right" : "none",
-                    "border-bottom-left-radius" : "20em"
-                    });
-                break;
-            case "red" :
-                $("#red").css({
-                    "border" : "20em solid #ff4403",
-                    "border-bottom" : "none",
-                    "border-left" : "none",
-                    "border-top-right-radius" : "20em"
-                    });
-                break;
-            case "green" :
-                $("#green").css({
-                    "border": "20em solid #aeff92",
-                    "border-bottom" : "none",
-                    "border-right" : "none",
-                    "border-top-left-radius" : "20em"
-                    });
-                break;
-        }
-        }, i * 500);
-        setTimeout(function() {
+    console.log("entro a highlightButton");
+        var c = 0;
+        var interval = setInterval(function() {
+            console.log("toca iluminar " + randomSequence[c]);
+            switch(randomSequence[c]) {
+                case "blue" :
+                    $("#blue").css({
+                        "border" : "20em solid #39eaff",
+                        "border-top" : "none",
+                        "border-left" : "none",
+                        "border-bottom-right-radius" : "20em"
+                        });
+                    break;
+                case "yellow" :
+                    $("#yellow").css({
+                        "border" : "20em solid #fffd3a",
+                        "border-top" : "none",
+                        "border-right" : "none",
+                        "border-bottom-left-radius" : "20em"
+                        });
+                    break;
+                case "red" :
+                    $("#red").css({
+                        "border" : "20em solid #ff4403",
+                        "border-bottom" : "none",
+                        "border-left" : "none",
+                        "border-top-right-radius" : "20em"
+                        });
+                    break;
+                case "green" :
+                    $("#green").css({
+                        "border": "20em solid #aeff92",
+                        "border-bottom" : "none",
+                        "border-right" : "none",
+                        "border-top-left-radius" : "20em"
+                        });
+                    break;
+            }
+            console.log("ahora c vale " + c);
+            c++;
+            console.log("y después c vale " + c);
+            setTimeout(function() {
+                console.log("entro a apagar el botón");
             $("#green, #red, #blue, #yellow").removeAttr("style");
         }, 1000);
-    }
-
-    for (var i = 0; i < randomSequence.length; i++) {
-      doSetTimeout(i);
-    }
-   /* for (var i = 0; i < randomSequence.length; i++) {
-        console.log("entro a iluminar el botón que es el " + randomSequence[i]);
-        console.log(i);
-
-        setTimeout(function() {
-            console.log(randomSequence);
-            console.log(i);
-            console.log("ilumino " + randomSequence[i]);
-            $("#" + randomSequence[i]).css({
-                "border" : "20em solid" + highlightColors[randomSequence[i]],
-                "border-top" : "none",
-                "border-left" : "none",
-                "border-bottom-right-radius" : "20em"
-            });
-        }, 500);*/
-        /*switch(randomSequence[i]) {
-            case "blue" :
-                $("#blue").css({
-                    "border" : "20em solid #39eaff",
-                    "border-top" : "none",
-                    "border-left" : "none",
-                    "border-bottom-right-radius" : "20em"
-                    });
-                break;
-            case "yellow" :
-                $("#yellow").css({
-                    "border" : "20em solid #fffd3a",
-                    "border-top" : "none",
-                    "border-right" : "none",
-                    "border-bottom-left-radius" : "20em"
-                    });
-                break;
-            case "red" :
-                $("#red").css({
-                    "border" : "20em solid #ff4403",
-                    "border-bottom" : "none",
-                    "border-left" : "none",
-                    "border-top-right-radius" : "20em"
-                    });
-                break;
-            case "green" :
-                $("#green").css({
-                    "border": "20em solid #aeff92",
-                    "border-bottom" : "none",
-                    "border-right" : "none",
-                    "border-top-left-radius" : "20em"
-                    });
-                break;
-        }
-        setTimeout(function() {
-            $("#green, #red, #blue, #yellow").removeAttr("style");
-        }, 1000);
-    };*/
+            if(c >= randomSequence.length) {
+                console.log("c vale más o igual que la longitud de randomSequence");
+                clearInterval(interval);
+                playerTurn = true;
+            }
+        }, c * 500);
 };
 
 /////////// FUNCTION THAT RESETS THE GAME ///////////
