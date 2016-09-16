@@ -6,7 +6,6 @@ var strictMode = false;
 var randomSequence = [];
 var timesPlayer = 0;
 var round = 0;
-
 /////////// TURN ON AND OFF THE GAME ///////////
 
 $(".square").click(function() {
@@ -43,10 +42,7 @@ $(".strict").click(function() {
 /////////// PUSH START BUTTON ///////////
 
 $(".start").click(function() {
-    console.log(randomSequence);
-    console.log(isTheGameOn);
     if(isTheGameOn && randomSequence.length == 0) {
-        console.log("se ha pulsado start");
         blinkingLines();
     }
 })
@@ -54,13 +50,9 @@ $(".start").click(function() {
 /////////// FUNCTION FOR PLAYER TURN ///////////
 
 $(".colorButtons").click(function() {
-    console.log("el jugador ha pulsado un botón");
     if(playerTurn) {
-        console.log("entro en if porque playerTurn es " + playerTurn);
         timesPlayer++;
-        console.log("------- cuántas veces a pulsado el jugador: " +  timesPlayer);
         if(this.id !== randomSequence[timesPlayer-1]) {
-            console.log("el jugador se ha equivocado y ha pulsado " + this.id);
             if(strictMode) {
                 resetGame();
                 $("#counterLines").html("!!");
@@ -72,9 +64,7 @@ $(".colorButtons").click(function() {
             }
         }
         else {
-            console.log("el jugador ha acertado");
             if(timesPlayer >= randomSequence.length) {
-                console.log("es igual");
                 playerTurn = false;
                 timesPlayer = 0;
                 gameWorking();
@@ -131,10 +121,55 @@ function newSequenceElement() {
 /////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
 
 function highlightButton() {
-    console.log("entro a highlightButton");
-        var c = 0;
+    function eachButton(button) {
+        var whichOne = randomSequence[button];
+        //change background color via CSS class
+        switch(whichOne) {
+            case "blue" :
+                $("#blue").css({
+                    "border" : "20em solid #39eaff",
+                    "border-top" : "none",
+                    "border-left" : "none",
+                    "border-bottom-right-radius" : "20em"
+                    });
+                break;
+            case "yellow" :
+                $("#yellow").css({
+                    "border" : "20em solid #fffd3a",
+                    "border-top" : "none",
+                    "border-right" : "none",
+                    "border-bottom-left-radius" : "20em"
+                    });
+                break;
+            case "red" :
+                $("#red").css({
+                    "border" : "20em solid #ff4403",
+                    "border-bottom" : "none",
+                    "border-left" : "none",
+                    "border-top-right-radius" : "20em"
+                    });
+                break;
+            case "green" :
+                $("#green").css({
+                    "border": "20em solid #aeff92",
+                    "border-bottom" : "none",
+                    "border-right" : "none",
+                    "border-top-left-radius" : "20em"
+                    });
+                break;
+        }
+        // set a timeout that will revert back class after 5 seconds:
+        window.setTimeout(function() {
+            $("#" + whichOne).removeAttr("style");
+        }, (button+1) * 500);
+    }
+    for(var i = 0; i < randomSequence.length; i++) {
+        if(!$.timers.length) {
+            eachButton(i);
+        };
+    }
+        /*var c = 0;
         var interval = setInterval(function() {
-            console.log("toca iluminar " + randomSequence[c]);
             switch(randomSequence[c]) {
                 case "blue" :
                     $("#blue").css({
@@ -169,19 +204,15 @@ function highlightButton() {
                         });
                     break;
             }
-            console.log("ahora c vale " + c);
             c++;
-            console.log("y después c vale " + c);
             setTimeout(function() {
-                console.log("entro a apagar el botón");
             $("#green, #red, #blue, #yellow").removeAttr("style");
         }, 1000);
             if(c >= randomSequence.length) {
-                console.log("c vale más o igual que la longitud de randomSequence");
                 clearInterval(interval);
                 playerTurn = true;
             }
-        }, c * 500);
+        }, c * 500);*/
 };
 
 /////////// FUNCTION THAT RESETS THE GAME ///////////
