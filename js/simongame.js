@@ -10,6 +10,7 @@ var round = 0;
 /////////// TURN ON AND OFF THE GAME ///////////
 
 $(".square").click(function() {
+    console.log("***************** EMPIEZA EL JUEGO *****************");
     if(!isTheGameOn) {
         isTheGameOn = true;
         $(".square").css("margin-left", "0.1em");
@@ -57,12 +58,17 @@ $(".colorButtons").click(function() {
     if(playerTurn) {
         console.log("entro en if porque playerTurn es " + playerTurn);
         timesPlayer++;
+        console.log("cuántas veces a pulsado el jugador: " +  timesPlayer);
         if(this.id !== randomSequence[timesPlayer-1]) {
             console.log(this.id);
             if(strictMode) {
                 resetGame();
                 $("#counterLines").html("!!");
                 blinkingLines();
+            }
+            else {
+                playerTurn = false;
+                highlightButton();
             }
         }
         else {
