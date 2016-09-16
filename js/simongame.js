@@ -58,9 +58,9 @@ $(".colorButtons").click(function() {
     if(playerTurn) {
         console.log("entro en if porque playerTurn es " + playerTurn);
         timesPlayer++;
-        console.log("cuántas veces a pulsado el jugador: " +  timesPlayer);
+        console.log("------- cuántas veces a pulsado el jugador: " +  timesPlayer);
         if(this.id !== randomSequence[timesPlayer-1]) {
-            console.log(this.id);
+            console.log("el jugador se ha equivocado y ha pulsado " + this.id);
             if(strictMode) {
                 resetGame();
                 $("#counterLines").html("!!");
@@ -72,6 +72,7 @@ $(".colorButtons").click(function() {
             }
         }
         else {
+            console.log("el jugador ha acertado");
             if(timesPlayer >= randomSequence.length) {
                 console.log("es igual");
                 playerTurn = false;
