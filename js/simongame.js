@@ -65,9 +65,13 @@ $(".colorButtons").click(function() {
         }
         else {
             if(timesPlayer >= randomSequence.length) {
+                console.log("Se acaba el turno del jugador");
                 playerTurn = false;
                 timesPlayer = 0;
-                gameWorking();
+                // gameWorking();
+                setTimeout(function() {
+                    gameWorking();
+                }, 1000);
             }
         }
     }
@@ -116,61 +120,17 @@ function newSequenceElement() {
     var choices = ["green", "red", "yellow", "blue"];
     var randomColor = choices[Math.floor(Math.random() * choices.length)];
     randomSequence.push(randomColor);
+    console.log(randomSequence);
 };
 
-/////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
-
-function highlightButton() {
-    function eachButton(button) {
-        var whichOne = randomSequence[button];
-        //change background color via CSS class
-        switch(whichOne) {
-            case "blue" :
-                $("#blue").css({
-                    "border" : "20em solid #39eaff",
-                    "border-top" : "none",
-                    "border-left" : "none",
-                    "border-bottom-right-radius" : "20em"
-                    });
-                break;
-            case "yellow" :
-                $("#yellow").css({
-                    "border" : "20em solid #fffd3a",
-                    "border-top" : "none",
-                    "border-right" : "none",
-                    "border-bottom-left-radius" : "20em"
-                    });
-                break;
-            case "red" :
-                $("#red").css({
-                    "border" : "20em solid #ff4403",
-                    "border-bottom" : "none",
-                    "border-left" : "none",
-                    "border-top-right-radius" : "20em"
-                    });
-                break;
-            case "green" :
-                $("#green").css({
-                    "border": "20em solid #aeff92",
-                    "border-bottom" : "none",
-                    "border-right" : "none",
-                    "border-top-left-radius" : "20em"
-                    });
-                break;
-        }
-        // set a timeout that will revert back class after 5 seconds:
-        window.setTimeout(function() {
-            $("#" + whichOne).removeAttr("style");
-        }, (button+1) * 500);
-    }
-    for(var i = 0; i < randomSequence.length; i++) {
-        if(!$.timers.length) {
-            eachButton(i);
-        };
-    }
-        /*var c = 0;
-        var interval = setInterval(function() {
-            switch(randomSequence[c]) {
+/////////// HOLA
+function eachButton(button) {
+    var whichOne = randomSequence[button];
+    setTimeout(function() {
+        setTimeout(function() {
+            console.log("Enciendo " + whichOne);
+            //change background color via CSS class
+            switch(whichOne) {
                 case "blue" :
                     $("#blue").css({
                         "border" : "20em solid #39eaff",
@@ -204,15 +164,21 @@ function highlightButton() {
                         });
                     break;
             }
-            c++;
-            setTimeout(function() {
-            $("#green, #red, #blue, #yellow").removeAttr("style");
-        }, 1000);
-            if(c >= randomSequence.length) {
-                clearInterval(interval);
-                playerTurn = true;
-            }
-        }, c * 500);*/
+        }, button * 1000);
+
+        setTimeout(function() {
+            $("#" + whichOne).removeAttr("style");
+            console.log("Apago " + randomSequence[button]);
+        }, (button + 1) * 1000);
+    }, button * 250);
+}
+
+/////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
+
+function highlightButton() {
+    for(var i = 0; i < randomSequence.length; i++) {
+        eachButton(i);
+    }
 };
 
 /////////// FUNCTION THAT RESETS THE GAME ///////////
