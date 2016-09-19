@@ -8,7 +8,7 @@ var timesPlayer = 0;
 var round = 0;
 /////////// TURN ON AND OFF THE GAME ///////////
 
-$(".square").click(function() {
+$(".square, .onOffChoice").click(function() {
     console.log("***************** EMPIEZA EL JUEGO *****************");
     if(!isTheGameOn) {
         isTheGameOn = true;
