@@ -102,16 +102,20 @@ function blinkingLines() {
 function gameWorking() {
     newSequenceElement();
     highlightButton();
+    updateRound();
+}
+
+/////////// UPDATE COUNTER ROUND ///////////
+
+function updateRound() {
     round++;
-    setTimeout(function() {
-        if(round < 10) {
-            $("#counterLines").html("0" + round);
-        }
-        if(round >= 10) {
-            $("#counterLines").html(round);
-        }
-        playerTurn = true;
-    }, 1000);
+    if(round < 10) {
+        $("#counterLines").html("0" + round);
+    }
+    if(round >= 10) {
+        $("#counterLines").html(round);
+    }
+    playerTurn = true;
 }
 
 /////////// FUNCTION THAT CHOOSES A COLOR ///////////
@@ -123,7 +127,14 @@ function newSequenceElement() {
     console.log(randomSequence);
 };
 
-/////////// HOLA
+/////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
+
+function highlightButton() {
+    for(var i = 0; i < randomSequence.length; i++) {
+        eachButton(i);
+    }
+};
+
 function eachButton(button) {
     var whichOne = randomSequence[button];
     setTimeout(function() {
@@ -172,14 +183,6 @@ function eachButton(button) {
         }, (button + 1) * 1000);
     }, button * 250);
 }
-
-/////////// FUNCTION THAT HIGHLIGHTS THE SEQUENCE ///////////
-
-function highlightButton() {
-    for(var i = 0; i < randomSequence.length; i++) {
-        eachButton(i);
-    }
-};
 
 /////////// FUNCTION THAT RESETS THE GAME ///////////
 
