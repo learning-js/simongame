@@ -64,11 +64,11 @@ p i {
     top:0.80em;
     cursor: pointer;
 }
-#green:active {
-    border:20em solid #aeff92;
-    border-bottom:none;
-    border-right:none;
-    border-top-left-radius:20em;
+.greenActive:active {
+    border:20em solid #aeff92 !important;
+    border-bottom:none !important;
+    border-right:none !important;
+    border-top-left-radius:20em !important;
 }
 
 #red {
@@ -85,11 +85,11 @@ p i {
     top:0.80em;
     cursor: pointer;
 }
-#red:active {
-    border:20em solid #ff4403;
-    border-bottom:none;
-    border-left:none;
-    border-top-right-radius:20em;
+.redActive:active {
+    border:20em solid #ff4403 !important;
+    border-bottom:none !important;
+    border-left:none !important;
+    border-top-right-radius:20em !important;
 }
 
 #yellow {
@@ -106,11 +106,11 @@ p i {
     top:21.50em;
     cursor: pointer;
 }
-#yellow:active {
-    border:20em solid #fffd3a;
-    border-top:none;
-    border-right:none;
-    border-bottom-left-radius:20em;
+.yellowActive:active {
+    border:20em solid #fffd3a !important;
+    border-top:none !important;
+    border-right:none !important;
+    border-bottom-left-radius:20em !important;
 }
 
 #blue {
@@ -127,11 +127,11 @@ p i {
     top:21.50em;
     cursor: pointer;
 }
-#blue:active {
-    border:20em solid #39eaff;
-    border-top:none;
-    border-left:none;
-    border-bottom-right-radius:20em;
+.blueActive:active {
+    border:20em solid #39eaff !important;
+    border-top:none !important;
+    border-left:none !important;
+    border-bottom-right-radius:20em !important;
 }
 
 .grayBorder {

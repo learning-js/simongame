@@ -49,6 +49,19 @@ $(".start").click(function() {
 
 /////////// FUNCTION FOR PLAYER TURN ///////////
 
+function addButtonClass() {
+    $("#red").addClass("redActive");
+    $("#blue").addClass("blueActive");
+    $("#yellow").addClass("yellowActive");
+    $("#green").addClass("greenActive");
+}
+function removeButtonClass() {
+    $("#red").removeClass("redActive");
+    $("#blue").removeClass("blueActive");
+    $("#yellow").removeClass("yellowActive");
+    $("#green").removeClass("greenActive");
+}
+
 $(".colorButtons").click(function() {
     if(playerTurn) {
         timesPlayer++;
@@ -59,6 +72,7 @@ $(".colorButtons").click(function() {
                 blinkingLines();
             }
             else {
+                removeButtonClass();
                 playerTurn = false;
                 highlightButton();
             }
@@ -66,6 +80,7 @@ $(".colorButtons").click(function() {
         else {
             if(timesPlayer >= randomSequence.length) {
                 console.log("Se acaba el turno del jugador");
+                removeButtonClass();
                 playerTurn = false;
                 timesPlayer = 0;
                 // gameWorking();
@@ -115,6 +130,7 @@ function updateRound() {
     if(round >= 10) {
         $("#counterLines").html(round);
     }
+    addButtonClass();
     playerTurn = true;
 }
 
@@ -187,6 +203,7 @@ function eachButton(button) {
 /////////// FUNCTION THAT RESETS THE GAME ///////////
 
 function resetGame() {
+    removeButtonClass();
     isTheGameOn = false;
     playerTurn = false;
     randomSequence = [];
