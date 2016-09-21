@@ -73,6 +73,7 @@ $(".colorButtons").click(function() {
             }
             else {
                 removeButtonClass();
+                timesPlayer = 0;
                 playerTurn = false;
                 highlightButton();
             }
@@ -149,6 +150,8 @@ function highlightButton() {
     for(var i = 0; i < randomSequence.length; i++) {
         eachButton(i);
     }
+    addButtonClass();
+    playerTurn = true;
 };
 
 function eachButton(button) {
